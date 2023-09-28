@@ -10,12 +10,27 @@ function Formulaire() {
 
     const monnomsaffiche = (event) => {
         event.preventDefault();
-        alert(`❤️Bienvenue à ESGI Party ${name} !❤️ 
-        Vous êtes : ${categorie}`);
+        const message = renderCategorySpecificComponent();
+        alert(message);
     }
 
     const handleChange = (event) => {
         setCategorie(event.target.value);
+    }
+
+    const renderCategorySpecificComponent = () => {
+        switch (categorie) {
+            case 'Etudiant':
+                return `Bienvenue ${name} !`;
+            case 'Enseignant permanent':
+                return `Votre compte : ${name} !`;
+            case 'Enseignant contractuel':
+                return `Bonjour ${name} !`;
+            case 'Intervenant externe':
+                return `Casse toi ${name} !`;
+            default:
+                return `❤️Bienvenue à ESGI Party ${name} !❤️ Vous êtes : ${categorie}`;
+        }
     }
 
     return (
