@@ -1,7 +1,9 @@
 import Header from './header';
+import Footer from './footer';
+import React from 'react';
 
 function App() {
-  return <Header />
+  return (<React.Fragment><Header /><Footer /></React.Fragment>)
 }
 
 export default App;
