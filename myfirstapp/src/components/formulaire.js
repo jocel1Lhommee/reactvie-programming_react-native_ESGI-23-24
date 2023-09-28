@@ -1,34 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-class Formulaire extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { value: 'Etudiant' };
+function Formulaire() {
+    const [categorie, setCategorie] = useState('Etudiant');
+    const [name, setName] = useState('');
 
-        this.handleChange = this.handleChange.bind(this);
-        this.monnomsaffiche = this.monnomsaffiche.bind(this);
-    }
-
-    bienvenue() {
+    const bienvenue = () => {
         alert('❤️Bienvenue à ESGI Party !❤️');
     }
 
-    monnomsaffiche(event) {
+    const monnomsaffiche = (event) => {
         event.preventDefault();
-        alert(`❤️Bienvenue à ESGI Party ${event.target['nom'].value} !❤️
-        Vous êtes : ${this.state.value}`);
+        alert(`❤️Bienvenue à ESGI Party ${name} !❤️ 
+        Vous êtes : ${categorie}`);
     }
 
-    handleChange(event) {
-        this.setState({ value: event.target.value });
+    const handleChange = (event) => {
+        setCategorie(event.target.value);
     }
 
-    render() {
-        return (<div>
-            <form className='formulaire' onSubmit={this.monnomsaffiche}>
+    return (
+        <div>
+            <form className='formulaire' onSubmit={monnomsaffiche}>
                 <label>
-                    Choississez votre catégorie :
-                    <select value={this.state.value} onChange={this.handleChange}>
+                    Choisissez votre catégorie :
+                    <select value={categorie} onChange={handleChange}>
                         <option value="Etudiant">Etudiant</option>
                         <option value="Enseignant permanent">Enseignant permanent</option>
                         <option value="Enseignant contractuel">Enseignant contractuel</option>
@@ -36,17 +31,22 @@ class Formulaire extends React.Component {
                     </select>
                 </label>
                 <div className='nameGuest'>
-                    <input type='text' name='nom' placeholder='Votre nom' />
+                    <input
+                        type='text'
+                        name='nom'
+                        placeholder='Votre nom'
+                        onChange={(e) => setName(e.target.value)}
+                    />
                 </div>
                 <div className='signIn'>
                     <label>
                         S'enregistrer :
                     </label>
-                    <input type='submit' value='Allons-y' onClick={this.bienvenue} />
+                    <input type='submit' value='Allons-y' onClick={bienvenue} />
                 </div>
             </form>
-        </div>)
-    }
+        </div>
+    );
 }
 
 export default Formulaire;
