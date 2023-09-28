@@ -19,7 +19,10 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <!-- test -->
     <script type="text/babel">
-        ReactDOM.render(<div>Ah oui! ça marche</div>, document.getElementById('firstElement'))
+        ReactDOM.render(<React.Fragment><MySecondComponent></ MySecondComponent></ React.Fragment>, document.getElementById('firstElement'))
+        function MySecondComponent(){
+            return(<p>et ont peut même ajouté de nouveau éléments!</p>)
+        }
     </script>
 </body>
 
