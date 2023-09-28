@@ -25,7 +25,12 @@
         function MySecondComponent() {
             return (<p>et on peut même ajouter de nouveaux éléments ! </p>)
         }
-        ReactDOM.render(<React.Fragment><MyFirstComponent /><MySecondComponent /></React.Fragment>, document.getElementById('firstElement'))
+        function MyName() {
+            const nom = "Loïs et Jocelyn"
+            return (<p>{nom.toUpperCase()}</p>)
+        }
+        ReactDOM.render(<React.Fragment><MyFirstComponent /><MySecondComponent /><MyName /></React.Fragment>,
+            document.getElementById('firstElement'))
     </script>
 </body>
 
