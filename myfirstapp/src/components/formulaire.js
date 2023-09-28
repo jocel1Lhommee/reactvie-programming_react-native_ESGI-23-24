@@ -1,26 +1,52 @@
-function bienvenue() {
-    alert('❤️Bienvenue à ESGI Party !❤️');
-}
+import React from 'react';
 
-function monnomsaffiche(nameGuest) {
-    nameGuest.preventDefault();
-    alert(`❤️Bienvenue à ESGI Party ${nameGuest.target['nom'].value} !❤️`);
-}
+class Formulaire extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { value: 'Etudiant' };
 
-function Container() {
-    return (<div>
-        <form className='formulaire' onSubmit={monnomsaffiche}>
-            <div className='nameGuest'>
-                <input type='text' name='nom' placeholder='Votre nom' />
-            </div>
-            <div className='signIn'>
+        this.handleChange = this.handleChange.bind(this);
+        this.monnomsaffiche = this.monnomsaffiche.bind(this);
+    }
+
+    bienvenue() {
+        alert('❤️Bienvenue à ESGI Party !❤️');
+    }
+
+    monnomsaffiche(event) {
+        event.preventDefault();
+        alert(`❤️Bienvenue à ESGI Party ${event.target['nom'].value} !❤️
+        Vous êtes : ${this.state.value}`);
+    }
+
+    handleChange(event) {
+        this.setState({ value: event.target.value });
+    }
+
+    render() {
+        return (<div>
+            <form className='formulaire' onSubmit={this.monnomsaffiche}>
                 <label>
-                    S'enregistrer :
+                    Choississez votre catégorie :
+                    <select value={this.state.value} onChange={this.handleChange}>
+                        <option value="Etudiant">Etudiant</option>
+                        <option value="Enseignant permanent">Enseignant permanent</option>
+                        <option value="Enseignant contractuel">Enseignant contractuel</option>
+                        <option value="Intervenant externe">Intervenant externe</option>
+                    </select>
                 </label>
-                <input type='submit' value='Allons-y' onClick={bienvenue} />
-            </div>
-        </form>
-    </div>)
+                <div className='nameGuest'>
+                    <input type='text' name='nom' placeholder='Votre nom' />
+                </div>
+                <div className='signIn'>
+                    <label>
+                        S'enregistrer :
+                    </label>
+                    <input type='submit' value='Allons-y' onClick={this.bienvenue} />
+                </div>
+            </form>
+        </div>)
+    }
 }
 
-export default Container;
+export default Formulaire;
