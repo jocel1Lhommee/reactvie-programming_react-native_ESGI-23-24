@@ -22,7 +22,10 @@
         function MyFirstComponent() {
             return (<div> Ah oui! ça marche vraiment ***</div>)
         }
-        ReactDOM.render(<MyFirstComponent />, document.getElementById('firstElement'))
+        function MySecondComponent() {
+            return (<p>et on peut même ajouter de nouveaux éléments ! </p>)
+        }
+        ReactDOM.render(<div><MyFirstComponent /><MySecondComponent /></div>, document.getElementById('firstElement'))
     </script>
 </body>
 
