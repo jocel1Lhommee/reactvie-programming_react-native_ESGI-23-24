@@ -1,8 +1,18 @@
 import React, { useState } from 'react';
+import Etudiant from './etudiant';
+import Permanent from './permanenet';
+import Contractuel from './contractuel';
+import Intervenant from './intervenant';
 
 function Formulaire() {
     const [categorie, setCategorie] = useState('Etudiant');
     const [name, setName] = useState('');
+    const [guestList] = useState([
+        { name: 'Loïs', isHere: false },
+        { name: 'Jocelyn', isHere: false },
+        { name: 'Guillaume', isHere: false },
+        { name: 'Teddy', isHere: false },
+    ]);
 
     const bienvenue = () => {
         alert('❤️Bienvenue à ESGI Party !❤️');
@@ -10,7 +20,15 @@ function Formulaire() {
 
     const monnomsaffiche = (event) => {
         event.preventDefault();
-        const message = renderCategorySpecificComponent();
+        let message = `Désolé, ${name} n'est pas sur la liste des invités.`;
+        for (let i = 0; i < guestList.length; i++) {
+            if (guestList[i].name === name) {
+                guestList[i].isHere = true;
+                message = renderCategorySpecificComponent();
+                break;
+            }
+        }
+
         alert(message);
     }
 
@@ -21,15 +39,16 @@ function Formulaire() {
     const renderCategorySpecificComponent = () => {
         switch (categorie) {
             case 'Etudiant':
-                return `Bienvenue ${name} !`;
+                return Etudiant() + name + ' !';
             case 'Enseignant permanent':
-                return `Votre compte : ${name} !`;
+                return Permanent() + name + ' !';
             case 'Enseignant contractuel':
-                return `Bonjour ${name} !`;
+                return Contractuel() + name + ' !';
             case 'Intervenant externe':
-                return `Casse toi ${name} !`;
+                return Intervenant() + name + ' !';
             default:
-                return `❤️Bienvenue à ESGI Party ${name} !❤️ Vous êtes : ${categorie}`;
+                return `❤️Bienvenue à ESGI Party ${name} !❤️ 
+                Vous êtes : ${categorie}`;
         }
     }
 
