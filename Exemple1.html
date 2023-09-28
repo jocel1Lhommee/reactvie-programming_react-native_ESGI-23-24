@@ -19,7 +19,10 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <!-- test -->
     <script type="text/babel">
-        ReactDOM.render(<div>Ah oui! ça marche</div>, document.getElementById('firstElement'))
+        function MyFirstComponent() {
+            return (<div> Ah oui! ça marche vraiment ***</div>)
+        }
+        ReactDOM.render(<MyFirstComponent />, document.getElementById('firstElement'))
     </script>
 </body>
 
