@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 function Bienvenue(props){
     const [clic, clicNumber] = useState(0);
+    useEffect(()=>{
+        alert(`Vous avez cliquer ${clic} fois`);
+    });
     return (
     <div>
         <h1>Bonjour, {props.name}</h1>
@@ -13,9 +16,6 @@ function Bienvenue(props){
         <button onClick={()=>clicNumber(clic+1)}>
             clic !
         </button>
-        <p>
-            Nombre de clic:{clic}
-        </p>
     </div> 
     
     );
