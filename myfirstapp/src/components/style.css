@@ -4,3 +4,11 @@
   justify-content: center;
   border: 2px solid gray;
 }
+
+.footerClass {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 2px solid gray;
+  margin-top: 10px;
+}

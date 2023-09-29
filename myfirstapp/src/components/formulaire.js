@@ -3,6 +3,7 @@ import Etudiant from './etudiant';
 import Permanent from './permanenet';
 import Contractuel from './contractuel';
 import Intervenant from './intervenant';
+import Search from './search';
 
 function Formulaire() {
     const [categorie, setCategorie] = useState('Etudiant');
@@ -79,6 +80,9 @@ function Formulaire() {
                     <input type='submit' value='Allons-y' onClick={bienvenue} />
                 </div>
             </form>
+            <div>
+                <Search guestList={guestList} />
+            </div>
         </div>
     );
 }
