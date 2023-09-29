@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> ac81c7aa61da1d79647c9300f6b203e1ec39d11d
 import { useState,useEffect } from "react";
 import {Link} from 'react-router-dom';
 function Bienvenue(props){
@@ -25,4 +28,8 @@ function Bienvenue(props){
     
     );
 }
+<<<<<<< HEAD
 export default Bienvenue;
+=======
+export default Bienvenue;
+>>>>>>> ac81c7aa61da1d79647c9300f6b203e1ec39d11d
