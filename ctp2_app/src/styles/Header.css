@@ -1,0 +1,39 @@
+/* Header.css */
+
+/* Style the navbar */
+.navbar {
+    background-color: #333; /* Background color for the navbar */
+    color: white; /* Text color for links */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Add padding to the navbar */
+}
+
+/* Style the logo image */
+.logo {
+    width: 50px; /* Adjust the logo width */
+    height: 50px; /* Adjust the logo height */
+}
+
+/* Style the navigation links */
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px; /* Add spacing between the links */
+}
+
+/* Style the links themselves */
+.nav-links a {
+    text-decoration: none;
+    color: white; /* Text color for links */
+    font-weight: bold;
+}
+
+/* Change link color on hover */
+.nav-links a:hover {
+    color: #ff5733; /* Change to your desired hover color */
+}
