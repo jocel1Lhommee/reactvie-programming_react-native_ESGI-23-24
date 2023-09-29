@@ -1,4 +1,5 @@
 import { useState,useEffect } from "react";
+import {Link} from 'react-router-dom';
 function Bienvenue(props){
     const [clic, clicNumber] = useState(0);
     useEffect(()=>{
@@ -6,6 +7,9 @@ function Bienvenue(props){
     });
     return (
     <div>
+        <nav>
+            <Link to="/First">A propos!</Link>
+        </nav>
         <h1>Bonjour, {props.name}</h1>
         <div>
             <p>
