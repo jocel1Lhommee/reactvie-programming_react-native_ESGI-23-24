@@ -1,5 +1,5 @@
 function Footer() {
-    return (<footer><p>ESGI 2023-2024</p></footer>)
+    return (<footer className='footerClass'><p>ESGI 2023-2024</p></footer>)
 }
 
 export default Footer;
