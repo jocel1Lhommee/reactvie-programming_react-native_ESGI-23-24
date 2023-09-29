@@ -9,3 +9,14 @@ function App() {
 }
 
 export default App;
+
+import './App.css';
+import Header from './Header';
+
+function App() {
+  return (
+    <Header></Header>
+  );
+}
+
+export default App;
