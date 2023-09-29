@@ -1,25 +1,18 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 
-function Bienvenue(props) {
-    const [clic, clicNumber] = useState(0);
-    useEffect(() => {
-        alert(`Vous avez cliqué ${clic} fois`);
-    })
-    return (<div>
-        <nav>
-            <Link to="/first">A propos !</Link>
-        </nav>
-        <h1>Bonjour, {props.name}</h1>
+function Bienvenue() {
+    const guestList = require("../ressources/guestList.json");
+
+    return (
         <div>
-            <p>
-                Vous êtes : {props.text} <br />
-                Connexion à : {props.date}
-            </p>
+            {guestList.map((guest, index) => (
+                <div key={index}>
+                    <img src={require(`../img/${guest.img}`)} alt={guest.name} />
+                    <p>{guest.name}</p>
+                </div>
+            ))}
         </div>
-        <button onClick={() => clicNumber(clic + 1)}>
-            clic !
-        </button>
-    </div>);
+    );
 }
+
 export default Bienvenue;

@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Loïs",
+        "isHere": false,
+        "img": "lois.jpeg"
+    },
+    {
+        "name": "Jocelyn",
+        "isHere": false,
+        "img": "jocelyn.jpeg"
+    },
+    {
+        "name": "Teddy",
+        "isHere": false,
+        "img": "teddy.jpeg"
+    },
+    {
+        "name": "Raphaël",
+        "isHere": false,
+        "img": "raphael.jpeg"
+    }
+]

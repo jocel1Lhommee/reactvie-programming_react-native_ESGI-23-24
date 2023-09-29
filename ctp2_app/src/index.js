@@ -6,18 +6,30 @@ import {
   Route,
 } from 'react-router-dom';
 import './index.css';
-import App from './pages/App';
-import First from './components/first';
+import Propos from './components/propos';
+import Contact from './components/contact';
+import Invite from './components/invite';
 import reportWebVitals from './reportWebVitals';
+import App from './pages/App';
+import Header from './components/header';
+import Layout from './components/layout';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const headerComponent = (
+  <Header />
+);
+
 root.render(
   <BrowserRouter>
-    <Routes>
-      <Route path='/' element={<App />} />
-      <Route path='first' element={<First />} />
-    </Routes>
-  </BrowserRouter >
+    <Layout header={headerComponent}>
+      <Routes>
+        <Route path='/' element={<App />} />
+        <Route path='propos' element={<Propos />} />
+        <Route path='contact' element={<Contact />} />
+        <Route path='invite' element={<Invite />} />
+      </Routes>
+    </Layout>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
