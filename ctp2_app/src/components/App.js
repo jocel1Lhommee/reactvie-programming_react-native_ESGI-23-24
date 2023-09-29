@@ -4,7 +4,9 @@ import Bienvenue from './bienvenue';
 
 function App() {
   return (
-    <React.Fragment><Bienvenue name="Maha" /></React.Fragment>
+    <React.Fragment><Bienvenue name="Maha"
+    text="Enseignant permanant"
+    date="5/5/2022" /></React.Fragment>
   )
 }
 
