@@ -10,7 +10,7 @@ import Propos from './components/propos';
 import Contact from './components/contact';
 import Invite from './components/invite';
 import reportWebVitals from './reportWebVitals';
-import App from './pages/App';
+import App from './App';
 import Header from './components/header';
 import Layout from './components/layout';
 
