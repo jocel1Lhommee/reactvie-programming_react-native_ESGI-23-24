@@ -47,7 +47,7 @@ npm install -g react-native-cli
 npx create-expo-app --template
 ````
 
-### 1. Lanccer projet
+### 1. Lancer projet
 ````
 npm start
 ````
